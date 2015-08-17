@@ -53,7 +53,7 @@ public class VKontakteTemplate extends AbstractOAuth2ApiBinding implements VKont
     private ObjectMapper objectMapper;
 
     private final String accessToken;
-    
+
     protected final String clientSecret;
 
     // TODO: remove?

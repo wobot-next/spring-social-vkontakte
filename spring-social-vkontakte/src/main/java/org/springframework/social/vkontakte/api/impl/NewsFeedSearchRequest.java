@@ -39,7 +39,8 @@ public class NewsFeedSearchRequest {
         this.q = q;
     }
 
-    private NewsFeedSearchRequest() {
+    @SuppressWarnings("unused")
+	private NewsFeedSearchRequest() {
         // for jackson
     }
 }

@@ -78,7 +78,6 @@ public class GroupsTemplate extends AbstractVKontakteOperations implements IGrou
         return deserializeVK50ItemsResponse(response, Group.class).getItems();
     }
 
-    @Override
     public List<Group> getByIds(Collection<String> groupIds) {
         requireAuthorization();
 
@@ -93,17 +92,14 @@ public class GroupsTemplate extends AbstractVKontakteOperations implements IGrou
         return deserializeArray(response, Group.class).getItems();
     }
 
-    @Override
     public List<VKontakteProfile> getMembers(String groupId) {
         return getMembers(groupId, null, 0, 0);
     }
 
-    @Override
     public List<VKontakteProfile> getMembers(String groupId, String fields) {
         return getMembers(groupId, fields, 0, 0);
     }
 
-    @Override
     public List<VKontakteProfile> getMembers(String groupId, String fields, int count, int offset) {
         requireAuthorization();
 

@@ -16,3 +16,4 @@ spring-social-core/src/test/java/exploration
 .idea/
 *.iml
 *.iws
+/target/

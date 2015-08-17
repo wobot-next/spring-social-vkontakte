@@ -30,7 +30,7 @@ class VKontakteConfigBeanDefinitionParser extends AbstractProviderConfigBeanDefi
 	public VKontakteConfigBeanDefinitionParser() {
 		super(VKontakteConnectionFactory.class, VKontakteApiHelper.class);
 	}
-	
+
 	@Override
 	protected Class<? extends SocialAuthenticationService<?>> getAuthenticationServiceClass() {
 		return VKontakteAuthenticationService.class;
