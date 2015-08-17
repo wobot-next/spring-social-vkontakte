@@ -50,7 +50,8 @@ public class VKontakteErrorHandler extends DefaultResponseErrorHandler {
 
 	private void handleClientErrors(ClientHttpResponse response) throws IOException {
 		HttpStatus statusCode = response.getStatusCode();
-        String responseBody = readFully(response.getBody());
+        @SuppressWarnings("unused")
+		String responseBody = readFully(response.getBody());
 
 		if (statusCode == HttpStatus.UNAUTHORIZED) {
 			throw new NotAuthorizedException("vkontakte", "User was not authorised.");

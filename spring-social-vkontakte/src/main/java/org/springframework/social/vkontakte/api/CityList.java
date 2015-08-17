@@ -22,6 +22,7 @@ import java.util.List;
  * Collection of cities.
  * @author badbob
  */
+@SuppressWarnings("serial")
 public class CityList extends VKResponse implements Serializable {
 
     private List<City> cities;
