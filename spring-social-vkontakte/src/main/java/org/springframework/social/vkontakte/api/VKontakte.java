@@ -69,4 +69,9 @@ public interface VKontakte extends ApiBinding {
      * API for performing operations with utils.
      */
     public IUtilsOperations utilsOperations();
+
+    /**
+     * API for performing operations with Likes.
+     */
+    public ILikeOperations likeOperations();
 }

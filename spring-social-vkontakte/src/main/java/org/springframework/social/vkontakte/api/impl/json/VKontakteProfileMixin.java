@@ -29,7 +29,7 @@ import java.util.List;
 
 /**
  * Mixin for {@link org.springframework.social.vkontakte.api.VKontakteProfile}
- * 
+ *
  * @author vkolodrevskiy
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -96,6 +96,7 @@ class VKontakteProfileMixin {
     private String facebookName;
     @JsonProperty("twitter")
     private String twitter;
+    @JsonProperty("instagram")
     private String instagram;
     @JsonProperty("site")
     private String site;
