@@ -19,6 +19,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import org.springframework.social.UncategorizedApiException;
 import org.springframework.social.vkontakte.api.*;
+import org.springframework.social.vkontakte.api.impl.json.VKArray;
 import org.springframework.social.vkontakte.api.impl.wall.CommentsQuery;
 import org.springframework.social.vkontakte.api.impl.wall.CommunityWall;
 import org.springframework.util.LinkedMultiValueMap;
@@ -47,7 +48,7 @@ public class WallTemplate extends AbstractVKontakteOperations implements IWallOp
         return getPosts(-1, -1);
     }
 
-    public List<Post> getPostsForUser(Long userId, int offset, int limit) {
+    public VKArray<Post> getPostsForUser(Long userId, int offset, int limit) {
         requireAuthorization();
         Properties props = new Properties();
         if (offset >= 0) {
@@ -63,11 +64,11 @@ public class WallTemplate extends AbstractVKontakteOperations implements IWallOp
         URI uri = makeOperationURL("wall.get", props, ApiVersion.VERSION_5_27);
         VKGenericResponse response = restTemplate.getForObject(uri, VKGenericResponse.class);
         checkForError(response);
-        return deserializeVK50ItemsResponse(response, Post.class).getItems();
+        return deserializeVK50ItemsResponse(response, Post.class);
     }
 
     public List<Post> getPosts(int offset, int limit) {
-        return getPostsForUser(null, offset, limit);
+        return getPostsForUser(null, offset, limit).getItems();
     }
 
     public Post getPost(Long userId, String postId) {

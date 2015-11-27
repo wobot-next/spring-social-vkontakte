@@ -15,6 +15,7 @@
  */
 package org.springframework.social.vkontakte.api;
 
+import org.springframework.social.vkontakte.api.impl.json.VKArray;
 import org.springframework.social.vkontakte.api.impl.wall.CommentsQuery;
 
 import java.util.List;
@@ -40,7 +41,7 @@ public interface IWallOperations {
      * @param limit  the maximum number of posts to return.
      * @return list of wall posts
      */
-    List<Post> getPostsForUser(Long userId, int offset, int limit);
+    VKArray<Post> getPostsForUser(Long userId, int offset, int limit);
 
     /**
      * Retrieve wall posts for the authenticated user.
