@@ -33,7 +33,7 @@ uploadArchives {
         mavenDeployer {
             customizePom(pom, project)
 
-            snapshotRepository(url: 'http://fugru.com/archiva/repository/snapshots/') {
+            snapshotRepository(url: 'http://localhost:8081/artifactory/libs-snapshot-local') {
                 authentication(userName: user, password: password);
             }
         }
