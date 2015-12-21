@@ -33,9 +33,13 @@ uploadArchives {
         mavenDeployer {
             customizePom(pom, project)
 
-            snapshotRepository(url: 'http://localhost:8081/artifactory/libs-snapshot-local') {
+            repository(url: 'http://artifactory.wobot.local/artifactory/libs-release-local') {
                 authentication(userName: user, password: password);
             }
+            snapshotRepository(url: 'http://artifactory.wobot.local/artifactory/libs-snapshot-local') {
+                authentication(userName: user, password: password);
+            }
+
         }
     }
 }
