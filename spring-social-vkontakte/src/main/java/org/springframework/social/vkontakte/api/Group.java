@@ -42,9 +42,9 @@ public class Group {
     private String photo50;
     private String photo100;
     private String photo200;
-    private long cityId;
-    private long countryId;
     private Place place;
+    private City city;
+    private Country country;
 
     public Group(long id) {
         groupId = id;
@@ -94,14 +94,6 @@ public class Group {
         return photo200;
     }
 
-    public long getCityId() {
-        return cityId;
-    }
-
-    public long getCountryId() {
-        return countryId;
-    }
-
     public Place getPlace() {
         return place;
     }
@@ -140,5 +132,13 @@ public class Group {
 
     public String getSite() {
         return site;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public Country getCountry() {
+        return country;
     }
 }

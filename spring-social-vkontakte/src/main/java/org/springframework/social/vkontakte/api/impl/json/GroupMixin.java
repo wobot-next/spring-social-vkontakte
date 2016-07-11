@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import org.springframework.social.vkontakte.api.City;
+import org.springframework.social.vkontakte.api.Country;
 import org.springframework.social.vkontakte.api.Place;
 import org.springframework.social.vkontakte.api.impl.json.deserializers.UnixTimeDeserializer;
 
@@ -47,10 +49,10 @@ public class GroupMixin {
     private String photo200;
 
     @JsonProperty("city")
-    private long cityId;
+    private City city;
 
     @JsonProperty("country")
-    private long countryId;
+    private Country country;
 
     @JsonProperty("place")
     private Place place;
